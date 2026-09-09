@@ -145,6 +145,34 @@
 
             <div class="exp-entries">
 
+                <!-- iCode -->
+                <div class="exp-entry">
+                    <div class="exp-header">
+                        <div class="exp-title-group">
+                            <h3 class="exp-role">Robotics Instructor (Part-Time)</h3>
+                            <span class="exp-org">iCode — Costa Mesa, CA</span>
+                        </div>
+                        <span class="exp-date">August 2026 – Present</span>
+                    </div>
+                    <div class="exp-prose">
+                        <p>I teach K-12 students robotics and coding fundamentals through iCode's hands-on, belt-system STEM curriculum, covering robotics kits, drones, and introductory programming concepts. A lot of the work is translation: taking real-world robotics and embedded systems concepts from my own coursework and research and turning them into age-appropriate, hands-on lessons that build students' technical and problem-solving skills.</p>
+                    </div>
+                </div>
+
+                <!-- Northrop Grumman Collaboration Project -->
+                <div class="exp-entry">
+                    <div class="exp-header">
+                        <div class="exp-title-group">
+                            <h3 class="exp-role">Embedded Systems Engineer, Integration Team</h3>
+                            <span class="exp-org">Northrop Grumman Collaboration Project — Pomona, CA</span>
+                        </div>
+                        <span class="exp-date">August 2026 – Present</span>
+                    </div>
+                    <div class="exp-prose">
+                        <p>I serve as an embedded systems engineer on the integration team for the campus Northrop Grumman Collaboration Project, tasked with unifying independently developed autonomy, ground control station (GCS), and RF subsystems into a shared ROS architecture. Most of the work is coordination as much as code: aligning interface and data-format standards across sub-teams so subsystems built in isolation can actually talk to each other within ROS.</p>
+                    </div>
+                </div>
+
                 <!-- Team Pegasus -->
                 <div class="exp-entry">
                     <div class="exp-header">
@@ -155,7 +183,7 @@
                         <span class="exp-date">January 2025 – May 2026</span>
                     </div>
                     <div class="exp-prose">
-                        <p>I joined Team Pegasus in January 2025 as an Autonomy Engineer on a Lockheed Martin-sponsored research project building an end-to-end autonomy stack for a 110 lb eVTOL UAV. As the project matured and I took on the Autonomy Lead role, I chose to carry it forward as my senior capstone. I own the full autonomy pipeline (perception, path planning, and control), built in ROS 2 and PX4 on Jetson-based ARM compute, integrating LiDAR, stereo cameras, and IMUs for real-time state estimation and navigation. Leading a seven-person team across autonomy, avionics, and hardware has meant translating technical constraints into decisions the whole team can act on. When hardware-software integration failures surfaced during flight testing, I dug into telemetry logs, found the root causes, and resolved them.</p>
+                        <p>I joined Team Pegasus in January 2025 as an Autonomy Engineer on a Lockheed Martin-sponsored research project building an end-to-end autonomy stack for a UAV. As the project matured and I took on the Autonomy Lead role, I chose to carry it forward as my senior capstone. Leading a team of seven engineers, I designed and integrated an end-to-end UAV autonomy system in C++ and Python on ARM-based embedded Linux (Jetson AGX), progressing from Gazebo SITL simulation through hardware-in-the-loop testing to outdoor field deployment. I bridged the PX4 flight controller to ROS 2 via uXRCE-DDS and integrated LiDAR and ZED X stereo cameras (including GMSL bring-up) into a unified perception pipeline supporting SLAM-based localization and closed-loop control. When hardware-software integration failures surfaced during flight testing, I dug into telemetry logs, traced faults across firmware, OS-level timing, and application software, and resolved them to improve reliability from lab through outdoor flight test.</p>
                     </div>
                     <div class="media-slider" aria-label="Team Pegasus images and videos">
                         <div class="slider-track">
@@ -195,13 +223,13 @@
                 <div class="exp-entry">
                     <div class="exp-header">
                         <div class="exp-title-group">
-                            <h3 class="exp-role">Research Assistant</h3>
+                            <h3 class="exp-role">Student Research Assistant – LiDAR Systems &amp; Sensor Integration Lead</h3>
                             <span class="exp-org">Autonomous Vehicle Laboratory, California State Polytechnic University, Pomona</span>
                         </div>
                         <span class="exp-date">May 2025 – Present</span>
                     </div>
                     <div class="exp-prose">
-                        <p>I work in the Autonomous Vehicle Laboratory on campus developing real-time robotic software in C++ and Python for autonomous ground vehicle systems. My work centers on multi-sensor fusion, integrating LiDAR, stereo cameras, and Xsens IMUs into ROS 2 pipelines for real-time localization and mapping. A significant part of the role is iterative field testing: running the system, analyzing where it breaks down, and refining the approach. I have also taken ownership of system documentation and calibration procedures so the whole team can reproduce results and build on each other's work.</p>
+                        <p>I lead LiDAR sensor integration for the lab's autonomy stack, designing an STM32-based hardware time-synchronization module that timestamps IMU and LiDAR data against a shared GPS/PPS reference for deterministic sensor fusion. That module feeds an RTOS task pipeline (interrupt-driven PPS capture → sensor read → buffered output) into a custom ROS 2 node that time-aligns IMU and Velodyne VLP-16 point cloud data for downstream perception and SLAM. I also coordinate with the broader autonomy team to identify and scope real-time sensor-sync gaps in the existing perception pipeline, translating them into firmware-level solutions.</p>
                     </div>
                     <div class="media-slider" aria-label="Autonomous Vehicle Laboratory images and videos">
                         <div class="slider-track">
@@ -282,31 +310,45 @@
 
             <div class="projects-grid">
 
-                <!-- Project DOLPHIN -->
+                <!-- Low-Cost Surgical Manipulator -->
                 <div class="project-card">
                     <div class="project-card-top">
                         <span class="project-tag tag-research">Research</span>
-                        <h3 class="project-card-title">Project DOLPHIN</h3>
+                        <h3 class="project-card-title">Low-Cost Surgical Manipulator with Impedance-Sensing End Effector</h3>
                     </div>
                     <div class="project-card-body">
-                        <p>A subsea swarm AUV autonomy system built under Dr. Scott Boskovich at Cal Poly Pomona. I own the behavior tree architecture running at 10 Hz on a Raspberry Pi 5, the fault handling system across five distinct failure modes, and the interface between autonomy, control, and perception. This is active research, and the architecture decisions I am making now will determine how the system scales.</p>
+                        <p>Electrical/embedded lead on a sub-$5K manually controlled surgical robot, secured through competitive Cal Poly Pomona Project Hatchery funding and advised by Dr. Dan Gonzalez (25+ years of Design/Quality Engineering at J&amp;J). I am designing impedance-sensing tip electronics, front-end signal conditioning, and firmware for real-time tissue contact detection, and building ROS 2 data handoff and hardware fail-safes aligned with IEC 60601/62304 medical device standards. I am collaborating closely with an ME counterpart to integrate sensor electronics with the end-effector design from the ground up.</p>
                     </div>
                     <div class="project-card-footer">
-                        <span class="btn-link coming-soon">GitHub — Repo Under Construction</span>
+                        <span class="btn-link coming-soon">GitHub — Coming Soon</span>
                     </div>
                 </div>
 
-                <!-- UGV SLAM -->
+                <!-- Real-Time Vehicle Control Firmware -->
                 <div class="project-card">
                     <div class="project-card-top">
-                        <span class="project-tag tag-research">Research</span>
-                        <h3 class="project-card-title">UGV SLAM System</h3>
+                        <span class="project-tag tag-academic">Personal Project</span>
+                        <h3 class="project-card-title">Real-Time Vehicle Control Firmware (STM32, FreeRTOS)</h3>
                     </div>
                     <div class="project-card-body">
-                        <p>An autonomous ground vehicle SLAM pipeline built at the Cal Poly Pomona Autonomous Vehicle Laboratory. I integrated LiDAR, stereo cameras, and Xsens IMUs into a ROS 2-based localization and mapping system for real-world autonomous navigation. The majority of the work was iterative field testing: running the system against real environments, diagnosing localization failures, and refining the pipeline through parameter tuning and structural changes.</p>
+                        <p>A bare-metal, real-time control firmware stack on an STM32 Nucleo board using FreeRTOS, with a custom SPI/I2C IMU driver written from register-level configuration, deliberately avoiding vendor HAL abstractions to build genuine low-level embedded competency. I architected an interrupt-driven control loop (sensor read → state estimation → actuator output) with a watchdog timer and a multi-mode fault-handling task, mirroring the deterministic, interrupt-driven timing patterns from my sensor synchronization work. I am planning bench validation measuring loop timing, filter convergence, and fault-injection response on a live motor/actuator rig to produce defensible performance data.</p>
                     </div>
                     <div class="project-card-footer">
-                        <a href="https://github.com/changwemusonda/avl_slam" target="_blank" rel="noopener noreferrer" class="btn-link">View on GitHub →</a>
+                        <span class="btn-link coming-soon">GitHub — Coming Soon</span>
+                    </div>
+                </div>
+
+                <!-- CaseBridge — AI Hackathon Finalist -->
+                <div class="project-card project-card--finalist">
+                    <div class="project-card-top">
+                        <span class="project-tag tag-hackathon">Hackathon — Finalist</span>
+                        <h3 class="project-card-title">CaseBridge</h3>
+                    </div>
+                    <div class="project-card-body">
+                        <p>An AI-powered case management tool built for the Cal Poly Pomona AI Hackathon 2026, where our team reached the finals. CaseBridge targets the administrative overhead that consumes 60–70% of a social worker's day: an AI scribe converts session transcripts into structured case notes, a resource-matching tool connects clients to community services, and a form-filler auto-populates referral documents from existing case data. Built with React, Vite, Tailwind CSS, and the Anthropic Claude API.</p>
+                    </div>
+                    <div class="project-card-footer">
+                        <a href="https://github.com/Ryan-Simpson/CaseBridge" target="_blank" rel="noopener noreferrer" class="btn-link">View on GitHub →</a>
                     </div>
                 </div>
 
@@ -317,24 +359,38 @@
                         <h3 class="project-card-title">Deep Differentiable Neural Planner</h3>
                     </div>
                     <div class="project-card-body">
-                        <p>An extension of a CVPR 2022 paper on differentiable planning for egocentric navigation. I benchmarked three planning architectures (VIN, GPPN, and CALVIN variants) to evaluate their performance and scalability in learned planning settings. The work goes beyond evaluation: once I identified where each architecture breaks down, the goal became understanding how those weaknesses can be addressed and what improvements would move differentiable planning closer to real-world navigation.</p>
+                        <p>An extension of a CVPR 2022 paper on differentiable planning for egocentric navigation. I trained and benchmarked four planning architectures (VIN, GPPN, CALVINConv2d, and CALVINConv3d) on custom egocentric and allocentric datasets to evaluate cross-dataset generalization. Along the way I modernized a legacy PyTorch research codebase, resolving GPU/CPU tensor handling and CUDA dependency issues to establish a reproducible ML experiment pipeline.</p>
                     </div>
                     <div class="project-card-footer">
                         <a href="https://github.com/changwemusonda/PathPlanning" target="_blank" rel="noopener noreferrer" class="btn-link">View on GitHub →</a>
                     </div>
                 </div>
 
-                <!-- A* FPGA -->
+                <!-- Broncos Gambit Chess Engine -->
                 <div class="project-card">
                     <div class="project-card-top">
                         <span class="project-tag tag-academic">Academic</span>
-                        <h3 class="project-card-title">A* Path Planning on FPGA</h3>
+                        <h3 class="project-card-title">Broncos Gambit — Chess Engine</h3>
                     </div>
                     <div class="project-card-body">
-                        <p>A hardware-accelerated implementation of the A* path planning algorithm in Verilog on an FPGA, with a Python interface for validation. I designed the hardware logic for parallel execution and validated performance against Python reference models across multiple test scenarios. The project required reasoning about timing constraints, resource utilization, and the gap between algorithmic logic and hardware reality.</p>
+                        <p>A fully functional chess engine built in C as part of a 5-person team, managed with Jira and Git, communicating over the UCI protocol for plug-in compatibility with any standard chess GUI. I helped implement alpha-beta search with negamax, quiescence search, and a 1M-entry Zobrist-hashed transposition table (~32 MB), and applied iterative deepening and move ordering heuristics to improve pruning efficiency.</p>
                     </div>
                     <div class="project-card-footer">
-                        <a href="https://github.com/changwemusonda/AStar_FPGA" target="_blank" rel="noopener noreferrer" class="btn-link">View on GitHub →</a>
+                        <a href="https://github.com/changwemusonda/Broncos-Gambit" target="_blank" rel="noopener noreferrer" class="btn-link">View on GitHub →</a>
+                    </div>
+                </div>
+
+                <!-- UGV SLAM -->
+                <div class="project-card">
+                    <div class="project-card-top">
+                        <span class="project-tag tag-research">Research</span>
+                        <h3 class="project-card-title">UGV SLAM System</h3>
+                    </div>
+                    <div class="project-card-body">
+                        <p>A ROS 2-based SLAM pipeline integrating mapping and localization for autonomous navigation in unstructured outdoor environments, built at the Cal Poly Pomona Autonomous Vehicle Laboratory. I improved localization robustness by analyzing failure cases under sensor noise and environmental variation, refining pipeline parameters through iterative field testing.</p>
+                    </div>
+                    <div class="project-card-footer">
+                        <a href="https://github.com/changwemusonda/avl_slam" target="_blank" rel="noopener noreferrer" class="btn-link">View on GitHub →</a>
                     </div>
                 </div>
 
@@ -352,31 +408,17 @@
                     </div>
                 </div>
 
-                <!-- Broncos Gambit Chess Robot -->
+                <!-- A* FPGA -->
                 <div class="project-card">
                     <div class="project-card-top">
                         <span class="project-tag tag-academic">Academic</span>
-                        <h3 class="project-card-title">Broncos Gambit — Chess Robot</h3>
+                        <h3 class="project-card-title">A* Path Planning on FPGA</h3>
                     </div>
                     <div class="project-card-body">
-                        <p>A self-playing chess robot built for the Broncos Gambit Championship as part of ECE 4318 Software Engineering at Cal Poly Pomona. Working with a team, I helped design and implement the system in Java and C/C++, bridging the software chess engine with physical robot hardware. The project was as much a lesson in system integration and team coordination as it was in algorithms — making hardware, firmware, and application logic all communicate correctly under real conditions.</p>
+                        <p>A hardware-accelerated implementation of the A* path planning algorithm in Verilog on an FPGA, with a Python interface for validation. I designed the hardware logic for parallel execution and validated performance against Python reference models across multiple test scenarios. The project required reasoning about timing constraints, resource utilization, and the gap between algorithmic logic and hardware reality.</p>
                     </div>
                     <div class="project-card-footer">
-                        <a href="https://github.com/changwemusonda/Broncos-Gambit" target="_blank" rel="noopener noreferrer" class="btn-link">View on GitHub →</a>
-                    </div>
-                </div>
-
-                <!-- CaseBridge — AI Hackathon Finalist -->
-                <div class="project-card project-card--finalist">
-                    <div class="project-card-top">
-                        <span class="project-tag tag-hackathon">Hackathon — Finalist</span>
-                        <h3 class="project-card-title">CaseBridge</h3>
-                    </div>
-                    <div class="project-card-body">
-                        <p>An AI-powered case management tool built for the Cal Poly Pomona AI Hackathon 2026, where our team reached the finals. CaseBridge targets the administrative overhead that consumes 60–70% of a social worker's day: an AI scribe converts session transcripts into structured case notes, a resource-matching tool connects clients to community services, and a form-filler auto-populates referral documents from existing case data. Built with React, Vite, Tailwind CSS, and the Anthropic Claude API.</p>
-                    </div>
-                    <div class="project-card-footer">
-                        <a href="https://github.com/Ryan-Simpson/CaseBridge" target="_blank" rel="noopener noreferrer" class="btn-link">View on GitHub →</a>
+                        <a href="https://github.com/changwemusonda/AStar_FPGA" target="_blank" rel="noopener noreferrer" class="btn-link">View on GitHub →</a>
                     </div>
                 </div>
 
